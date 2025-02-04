@@ -28,20 +28,42 @@ Existen los niveles:
 - Nivel 3
 - Emerit\@
 
-
-
 ::::{.cr-section}
-El SNII ha ido creciendo, desde el 2000 al 2023. En los últimos 23 años pasó de casi 7 mil a más de 40 mil personas pertenecientes. @cr-historico
+El SNII ha ido creciendo desde el 2000 al 2023. En los últimos 23 años pasó de casi 7 mil a más de 40 mil personas pertenecientes. @cr-historico
 
 :::{#cr-historico}
 ![](historico.png)
 :::
+::::
+
+La cantidad de mujeres y hombres ha ido aumentando y en el 2023, del total, casi 16 mil...
+
+::::{#cr-historico-hm}
+![](historico_mujeres_hombres.png)
+::::
+
+Aunque la diferencia total ha ido en aumento. @cr-historico-diferencia
+
+::::{#cr-historico-diferencia}
+![](historico_diferencia.png)
 
 
 
+::::{.cr-section}
+Analizando la tasa de crecimiento entre hombres y mujeres en el SNI, se percibe que la brecha había tenido un comportamiento medianamente constante hasta 2014. Luego, la brecha se redujo, alcanzando una tasa negativa en 2020, lo cual indica mucha menos brecha que en años pasados. @cr-tasa
 
+:::{#cr-tasa}
+![](tasa.png)
+:::
+::::
 
-::: 
+::::{.cr-section}
+Dado que 2020 fue, en México y el mundo, un año de confinamiento debido a la pandemia de COVID-19, es interesante notar que hubo un crecimiento de las investigadoras incorporadas. @cr-tasamujeres
+
+:::{#cr-tasamujeres}
+![](tasamujeres.png)
+:::
+::::
 
 
 <!-- Desde su creación, el SNII ha desempeñado un papel fundamental en la consolidación de la investigación científica y tecnológica en el país. Su estructura permite integrar a especialistas de todas las áreas del conocimiento, promoviendo la excelencia académica y la formación de nuevas generaciones de investigadoras e investigadores. Este sistema, además, contribuye al desarrollo de grupos de investigación de alto nivel en todo el territorio nacional, fortaleciendo así la capacidad científica y tecnológica de México.  

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -68,10 +34,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5108ee7687c63d24e8ded6cf2d10456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e09514d852390def5022a01fead4867e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/intersection-observer-polyfill-1.0.0/intersection-observer.js"></script>
+<script src="../site_libs/quarto-contrib/scrollama-3.2.0/scrollama.min.js"></script>
+<script src="../site_libs/quarto-contrib/closeread-0.1.0/closeread.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -99,105 +68,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<meta cr-debug-mode="false">
+<meta cr-remove-header-space="false">
 
 
+<link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/qmd-lab/closeread/closeread.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<div id="96b6d7da-678c-448b-9ba5-e0aef197336e" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob <span class="im">as</span> glob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="125aa6ad-c987-4302-ad67-58af879ebe35" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>archivos <span class="op">=</span> glob.glob(<span class="st">"../data/historicos/*.xlsx"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>archivos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>['../data/historicos\\Investigadores_vigentes_2000.xlsx',
- '../data/historicos\\Investigadores_vigentes_2001.xlsx',
- '../data/historicos\\Investigadores_vigentes_2002.xlsx',
- '../data/historicos\\Investigadores_vigentes_2003.xlsx',
- '../data/historicos\\Investigadores_vigentes_2004.xlsx',
- '../data/historicos\\Investigadores_vigentes_2005.xlsx',
- '../data/historicos\\Investigadores_vigentes_2006.xlsx',
- '../data/historicos\\Investigadores_vigentes_2007.xlsx',
- '../data/historicos\\Investigadores_vigentes_2008.xlsx',
- '../data/historicos\\Investigadores_vigentes_2009.xlsx',
- '../data/historicos\\Investigadores_vigentes_2010.xlsx',
- '../data/historicos\\Investigadores_vigentes_2012.xlsx',
- '../data/historicos\\Investigadores_vigentes_2013.xlsx',
- '../data/historicos\\Investigadores_vigentes_2014.xlsx',
- '../data/historicos\\Investigadores_Vigentes_2015.xlsx',
- '../data/historicos\\Investigadores_Vigentes_2016.xlsx',
- '../data/historicos\\Investigadores_Vigentes_2017.xlsx',
- '../data/historicos\\Investigadores_Vigentes_2018.xlsx',
- '../data/historicos\\Investigadores_Vigentes_2019.xlsx',
- '../data/historicos\\Investigadores_Vigentes_2020.xlsx',
- '../data/historicos\\Investigadores_vigentes_2023.xlsx',
- '../data/historicos\\Investigadore_vigentes_2011.xlsx']</code></pre>
+<div id="125aa6ad-c987-4302-ad67-58af879ebe35" class="cell" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>['../data/historicos/Investigadores_vigentes_2003.xlsx',
+ '../data/historicos/Investigadores_vigentes_2009.xlsx',
+ '../data/historicos/Investigadores_vigentes_2014.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2020.xlsx',
+ '../data/historicos/Investigadores_vigentes_2021.xlsx',
+ '../data/historicos/Investigadores_vigentes_2012.xlsx',
+ '../data/historicos/Investigadores_vigentes_2005.xlsx',
+ '../data/historicos/Investigadores_vigentes_2007.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2019.xlsx',
+ '../data/historicos/Investigadores_vigentes_2000.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2022.xlsx',
+ '../data/historicos/Investigadores_vigentes_2001.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2015.xlsx',
+ '../data/historicos/Investigadores_vigentes_2013.xlsx',
+ '../data/historicos/Investigadores_vigentes_2008.xlsx',
+ '../data/historicos/Investigadore_vigentes_2011.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2016.xlsx',
+ '../data/historicos/Investigadores_vigentes_2023.xlsx',
+ '../data/historicos/Investigadores_vigentes_2010.xlsx',
+ '../data/historicos/Investigadores_vigentes_2004.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2017.xlsx',
+ '../data/historicos/Investigadores_vigentes_2006.xlsx',
+ '../data/historicos/Investigadores_vigentes_2002.xlsx',
+ '../data/historicos/Investigadores_Vigentes_2018.xlsx']</code></pre>
 </div>
 </div>
-<div id="d4ff4c5e-a1e6-470b-972e-b6e7524387c0" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># columnas = [pd.read_excel(archivo).columns for archivo in archivos]</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># columnas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c0ce5f45-6ec0-4f18-8197-c78f601b8cef" class="cell" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="45">
+<pre><code>anio
+2023    41367
+2022    36624
+2021    35178
+2020    33165
+2019    30548
+2018    28633
+2017    27187
+2016    25076
+2015    23316
+2014    21359
+2013    19747
+2012    18555
+2011    17639
+2010    16598
+2009    15565
+2008    14681
+2007    13485
+2006    12096
+2005    10904
+2004    10189
+2002     9199
+2003     9199
+2001     8018
+2000     7466
+Name: count, dtype: int64</code></pre>
 </div>
-<div id="da7c4d86-71f0-4dd1-960d-4d5ecc068293" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> []</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> archivo <span class="kw">in</span> archivos:</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        anio <span class="op">=</span> archivo[<span class="op">-</span><span class="dv">9</span>:<span class="op">-</span><span class="dv">5</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        df <span class="op">=</span> pd.read_excel(archivo)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        df[<span class="st">"anio"</span>] <span class="op">=</span> anio</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        dfs.append(df)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"El archivo </span><span class="sc">{</span>archivo<span class="sc">}</span><span class="ss"> no se pudo leer"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>sni <span class="op">=</span> pd.concat(dfs,ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># sni.set_index("AÑO",inplace=True)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7fa3336c-db22-468e-9d01-b6a3aeadc420" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sni[<span class="st">"anio"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
-<pre><code>array(['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007',
-       '2008', '2009', '2010', '2012', '2013', '2014', '2015', '2016',
-       '2017', '2018', '2019', '2020', '2023', '2011'], dtype=object)</code></pre>
+<div id="7fa3336c-db22-468e-9d01-b6a3aeadc420" class="cell" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="46">
+<pre><code>array(['2003', '2009', '2014', '2020', '2021', '2012', '2005', '2007',
+       '2019', '2000', '2022', '2001', '2015', '2013', '2008', '2011',
+       '2016', '2023', '2010', '2004', '2017', '2006', '2002', '2018'],
+      dtype=object)</code></pre>
 </div>
 </div>
-<div id="4a78b7ff-7b38-44fd-8356-1b175e83b6b6" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sni[[</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="st">'NOMBRE DE LA INVESTIGADORA O INVESTIGADOR'</span>, <span class="st">'NOBILIS'</span>, <span class="st">'NIVEL'</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="co"># 'FECHA DE INICIO DE VIGENCIA', 'FECHA DE FIN DE VIGENCIA',</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">'ÁREA DEL CONOCIMIENTO'</span>, <span class="st">'DISCIPLINA (a partir de 1991)'</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="st">'SUBDISCIPLINA (a partir de 1991)'</span>, <span class="st">'ESPECIALIDAD (a partir de 1991)'</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="st">'INSTITUCIÓN DE ADSCRIPCIÓN (a partir de 1990)'</span>,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>       <span class="st">'DEPENDENCIA (a partir de 1991)'</span>,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>       <span class="st">'ENTIDAD FEDERATIVA ADSCRIPCIÓN</span><span class="ch">\n</span><span class="st">(a partir de 1990)'</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>       <span class="st">'PAIS ADSCRIPCIÓN </span><span class="ch">\n</span><span class="st">(a partir de 1990)'</span>, <span class="st">'CVU'</span>,</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="st">'NOMBRE DE LA INVESTIGADORA O DEL INVESTIGADOR'</span>, <span class="st">'DISCIPLINA'</span>,</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>       <span class="st">'SUBDISCIPLINA'</span>, <span class="st">'ESPECIALIDAD'</span>, <span class="st">'INSTITUCIÓN DE ADSCRIPCIÓN'</span>,</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>       <span class="st">'DEPENDENCIA'</span>, <span class="st">'ENTIDAD FEDERATIVA'</span>, <span class="st">'PAIS'</span>, </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 'ESTÍMULO ECONÓMICO',</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>       <span class="st">'Estímulo Económico'</span>, </span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'GRADO ACADÉMICO'</span>, <span class="st">'NOMBRE DEL INVESTIGADOR'</span>,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>       <span class="st">'EMÉRITO'</span>, <span class="st">'VIVO?'</span>, <span class="st">'DEPENDENCIA DE ADSCRIPCIÓN'</span>,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>       <span class="st">'ENTIDAD FEDERATIVA DE ADSCRIPCIÓN'</span>, <span class="st">'PAÍS DE ADSCRIPCIÓN'</span>,<span class="st">"anio"</span>]].to_csv(<span class="st">"../data/sni_2000-2023.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="a8724743-b671-4203-ac41-398f8a9b2130" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sni[<span class="st">"AÑO"</span>].isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>np.int64(209292)</code></pre>
+<div id="a8724743-b671-4203-ac41-398f8a9b2130" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>244479</code></pre>
 </div>
 </div>
 
@@ -286,8 +246,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -398,7 +356,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
